@@ -1,0 +1,225 @@
+{
+    "meseras": [
+      {
+        "id": 1,
+        "nombre": "Ana Gómez",
+        "usuario": "ana",
+        "password": "12345",
+        "zona": "A",
+        "estado": "activo",
+        "mesas_asignadas": [1, 2, 3, 4, 5]
+      },
+      {
+        "id": 2,
+        "nombre": "María López",
+        "usuario": "maria",
+        "password": "12345",
+        "zona": "B",
+        "estado": "activo",
+        "mesas_asignadas": [6, 7, 8, 9, 10]
+      },
+      {
+        "id": 3,
+        "nombre": "Lucía Pérez",
+        "usuario": "lucia",
+        "password": "12345",
+        "zona": "C",
+        "estado": "activo",
+        "mesas_asignadas": [11, 12, 13, 14, 15]
+      },
+      {
+        "id": 4,
+        "nombre": "Camila Torres",
+        "usuario": "camila",
+        "password": "12345",
+        "zona": "D",
+        "estado": "activo",
+        "mesas_asignadas": [16, 17, 18, 19, 20]
+      }
+    ],
+    "mesas": [
+      {"id": 1, "numero": 1, "zona": "A", "estado": "disponible", "ocupacion": 0, "tiempo_ocupacion": 0},
+      {"id": 2, "numero": 2, "zona": "A", "estado": "ocupada", "ocupacion": 2, "tiempo_ocupacion": 15},
+      {"id": 3, "numero": 3, "zona": "A", "estado": "pendiente", "ocupacion": 1, "tiempo_ocupacion": 5},
+      {"id": 4, "numero": 4, "zona": "A", "estado": "disponible", "ocupacion": 0, "tiempo_ocupacion": 0},
+      {"id": 5, "numero": 5, "zona": "A", "estado": "ocupada", "ocupacion": 3, "tiempo_ocupacion": 25},
+      {"id": 6, "numero": 6, "zona": "B", "estado": "disponible", "ocupacion": 0, "tiempo_ocupacion": 0},
+      {"id": 7, "numero": 7, "zona": "B", "estado": "disponible", "ocupacion": 0, "tiempo_ocupacion": 0},
+      {"id": 8, "numero": 8, "zona": "B", "estado": "ocupada", "ocupacion": 4, "tiempo_ocupacion": 35},
+      {"id": 9, "numero": 9, "zona": "B", "estado": "pendiente", "ocupacion": 2, "tiempo_ocupacion": 10},
+      {"id": 10, "numero": 10, "zona": "B", "estado": "disponible", "ocupacion": 0, "tiempo_ocupacion": 0},
+      {"id": 11, "numero": 11, "zona": "C", "estado": "ocupada", "ocupacion": 2, "tiempo_ocupacion": 20},
+      {"id": 12, "numero": 12, "zona": "C", "estado": "disponible", "ocupacion": 0, "tiempo_ocupacion": 0},
+      {"id": 13, "numero": 13, "zona": "C", "estado": "disponible", "ocupacion": 0, "tiempo_ocupacion": 0},
+      {"id": 14, "numero": 14, "zona": "C", "estado": "ocupada", "ocupacion": 1, "tiempo_ocupacion": 40},
+      {"id": 15, "numero": 15, "zona": "C", "estado": "pendiente", "ocupacion": 2, "tiempo_ocupacion": 5},
+      {"id": 16, "numero": 16, "zona": "D", "estado": "disponible", "ocupacion": 0, "tiempo_ocupacion": 0},
+      {"id": 17, "numero": 17, "zona": "D", "estado": "ocupada", "ocupacion": 3, "tiempo_ocupacion": 30},
+      {"id": 18, "numero": 18, "zona": "D", "estado": "disponible", "ocupacion": 0, "tiempo_ocupacion": 0},
+      {"id": 19, "numero": 19, "zona": "D", "estado": "disponible", "ocupacion": 0, "tiempo_ocupacion": 0},
+      {"id": 20, "numero": 20, "zona": "D", "estado": "pendiente", "ocupacion": 2, "tiempo_ocupacion": 15}
+    ],
+    "llamados": [
+      {
+        "id": 1651234567890,
+        "mesa": 3,
+        "zona": "A",
+        "mesera_id": 1,
+        "estado": "pendiente",
+        "tiempo": "2025-05-08T10:30:00",
+        "prioridad": "media"
+      },
+      {
+        "id": 1651234567891,
+        "mesa": 9,
+        "zona": "B",
+        "mesera_id": 2,
+        "estado": "pendiente",
+        "tiempo": "2025-05-08T10:35:00",
+        "prioridad": "alta"
+      },
+      {
+        "id": 1651234567892,
+        "mesa": 15,
+        "zona": "C",
+        "mesera_id": 3,
+        "estado": "pendiente",
+        "tiempo": "2025-05-08T10:45:00",
+        "prioridad": "baja"
+      },
+      {
+        "id": 1651234567893,
+        "mesa": 20,
+        "zona": "D",
+        "mesera_id": 4,
+        "estado": "pendiente",
+        "tiempo": "2025-05-08T10:50:00",
+        "prioridad": "media"
+      }
+    ],
+    "pedidos": [
+      {
+        "id": 1001,
+        "mesa": 2,
+        "zona": "A",
+        "mesera_id": 1,
+        "estado": "en_preparacion",
+        "tiempo": "2025-05-08T10:20:00",
+        "items": [
+          {"id": 1, "nombre": "Crepe de Pollo y Champiñones", "cantidad": 1, "precio": 18500},
+          {"id": 2, "nombre": "Limonada Natural", "cantidad": 2, "precio": 8500}
+        ],
+        "total": 35500
+      },
+      {
+        "id": 1002,
+        "mesa": 5,
+        "zona": "A",
+        "mesera_id": 1,
+        "estado": "listo_para_entregar",
+        "tiempo": "2025-05-08T10:15:00",
+        "items": [
+          {"id": 3, "nombre": "Waffle con Helado", "cantidad": 2, "precio": 14500},
+          {"id": 4, "nombre": "Café", "cantidad": 2, "precio": 5500}
+        ],
+        "total": 40000
+      },
+      {
+        "id": 1003,
+        "mesa": 8,
+        "zona": "B",
+        "mesera_id": 2,
+        "estado": "en_preparacion",
+        "tiempo": "2025-05-08T10:25:00",
+        "items": [
+          {"id": 5, "nombre": "Ensalada César", "cantidad": 1, "precio": 18900},
+          {"id": 6, "nombre": "Crepe Mixta", "cantidad": 1, "precio": 16900},
+          {"id": 7, "nombre": "Jugos Naturales", "cantidad": 2, "precio": 9500}
+        ],
+        "total": 54800
+      }
+    ],
+    "historial": [
+      {
+        "id": 1,
+        "tipo": "llamado",
+        "accion": "creacion",
+        "mesa": 3,
+        "zona": "A",
+        "mesera_id": 1,
+        "tiempo": "2025-05-08T10:30:00"
+      },
+      {
+        "id": 2,
+        "tipo": "llamado",
+        "accion": "creacion",
+        "mesa": 9,
+        "zona": "B",
+        "mesera_id": 2,
+        "tiempo": "2025-05-08T10:35:00"
+      },
+      {
+        "id": 3,
+        "tipo": "llamado",
+        "accion": "creacion",
+        "mesa": 15,
+        "zona": "C",
+        "mesera_id": 3,
+        "tiempo": "2025-05-08T10:45:00"
+      },
+      {
+        "id": 4,
+        "tipo": "llamado",
+        "accion": "creacion",
+        "mesa": 20,
+        "zona": "D",
+        "mesera_id": 4,
+        "tiempo": "2025-05-08T10:50:00"
+      },
+      {
+        "id": 5,
+        "tipo": "pedido",
+        "accion": "creacion",
+        "mesa": 2,
+        "zona": "A",
+        "mesera_id": 1,
+        "tiempo": "2025-05-08T10:20:00"
+      },
+      {
+        "id": 6,
+        "tipo": "pedido",
+        "accion": "creacion",
+        "mesa": 5,
+        "zona": "A",
+        "mesera_id": 1,
+        "tiempo": "2025-05-08T10:15:00"
+      },
+      {
+        "id": 7,
+        "tipo": "pedido",
+        "accion": "creacion",
+        "mesa": 8,
+        "zona": "B",
+        "mesera_id": 2,
+        "tiempo": "2025-05-08T10:25:00"
+      },
+      {
+        "id": 8,
+        "tipo": "llamado",
+        "accion": "aceptacion",
+        "mesa": 1,
+        "zona": "A",
+        "mesera_id": 1,
+        "tiempo": "2025-05-08T09:30:00"
+      },
+      {
+        "id": 9,
+        "tipo": "llamado",
+        "accion": "postergacion",
+        "mesa": 4,
+        "zona": "A",
+        "mesera_id": 1,
+        "tiempo": "2025-05-08T09:45:00"
+      }
+    ]
+  }

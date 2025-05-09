@@ -1,0 +1,400 @@
+/* ===== RESPONSIVE STYLES ===== */
+
+/* Tablets and smaller desktops */
+@media screen and (max-width: 1024px) {
+    /* General */
+    .container {
+        padding: 0 2rem;
+    }
+
+    /* Header */
+    .logo {
+        height: 50px;
+    }
+
+    /* Hero */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    /* Features */
+    .feature {
+        min-width: 250px;
+    }
+    
+    /* Menu */
+    .menu-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    /* Client Dashboard */
+    .dashboard-container {
+        flex-direction: column;
+    }
+    
+    .menu-preview, .waiter-call-section {
+        width: 100%;
+    }
+    
+    /* Mesera Dashboard */
+    .control-buttons {
+        gap: 0.8rem;
+    }
+    
+    .control-btn {
+        min-width: 120px;
+        padding: 0.8rem;
+    }
+    
+    .map-container {
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    }
+}
+
+/* Mobile Navigation */
+@media screen and (max-width: 768px) {
+    /* Header & Navigation */
+    header {
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 80px;
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        height: calc(100vh - 80px);
+        text-align: center;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+        z-index: 999;
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .nav-links li {
+        margin: 2rem 0;
+    }
+    
+    /* Actualizando el color de los links para mejor contraste */
+    .nav-links a {
+        color: var(--secondary-color);
+    }
+    
+    .burger {
+        display: block;
+    }
+    
+    .burger.active .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .burger.active .line2 {
+        opacity: 0;
+    }
+    
+    .burger.active .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
+    /* Actualizando color de las líneas del burger menu */
+    .burger div {
+        background-color: var(--white);
+    }
+    
+    /* Hero */
+    .hero {
+        height: 60vh;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    /* Features */
+    .features {
+        padding: 3rem 1rem;
+    }
+    
+    .feature {
+        min-width: 100%;
+    }
+    
+    /* How It Works */
+    .how-it-works {
+        padding: 3rem 1rem;
+    }
+    
+    .steps {
+        gap: 3rem;
+    }
+    
+    .step {
+        min-width: 100%;
+    }
+    
+    /* Call to Action */
+    .cta {
+        padding: 3rem 1rem;
+    }
+    
+    .cta h2 {
+        font-size: 2rem;
+    }
+    
+    /* Client Dashboard */
+    .welcome-section h1 {
+        font-size: 2rem;
+    }
+    
+    .menu-items {
+        justify-content: center;
+    }
+    
+    .menu-preview .menu-item {
+        min-width: 100%;
+    }
+    
+    /* Order Tracking */
+    .tracking-bar {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+    
+    .tracking-bar::before {
+        display: none;
+    }
+    
+    .tracking-step {
+        width: 100%;
+    }
+    
+    /* Bill View */
+    .bill-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .payment-methods {
+        flex-direction: column;
+    }
+    
+    /* Mesera Dashboard */
+    .mesera-welcome {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        /* Actualización de color para el fondo del welcome mesera */
+        background-color: var(--primary-color);
+    }
+    
+    .control-buttons {
+        flex-direction: column;
+    }
+    
+    .call-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .call-info {
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
+    
+    .tables-filter {
+        flex-direction: column;
+    }
+    
+    /* Actualización para los botones de filtro */
+    .filter-btn.active {
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+    }
+    
+    .map-container {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: 0.8rem;
+    }
+    
+    .table-item {
+        padding: 0.8rem;
+    }
+    
+    .order-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .order-actions {
+        justify-content: center;
+    }
+    
+    .history-filter {
+        flex-direction: column;
+    }
+    
+    .date-filter, .type-filter {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .history-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .queue-item {
+        min-width: 100%;
+    }
+    
+    /* Call Notification */
+    .call-notification {
+        left: 20px;
+        right: 20px;
+        width: auto;
+        /* Actualización para el borde superior */
+        border-top: 4px solid var(--primary-color);
+    }
+    
+    /* Actualizando el encabezado de notificación */
+    .notification-header {
+        background-color: var(--dark-brown);
+        color: var(--white);
+    }
+    
+    /* Menu Page */
+    .menu-header {
+        padding: 3rem 1rem;
+    }
+    
+    .menu-title h1 {
+        font-size: 2rem;
+    }
+    
+    .menu-nav-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Actualización para botones de navegación activos */
+    .menu-nav-btn.active, .menu-nav-btn:hover {
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .qr-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    /* Footer */
+    footer {
+        flex-direction: column;
+        padding: 0 1rem;
+        /* Actualizar color del footer */
+        background-color: var(--dark-brown);
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+    
+    .footer-section {
+        margin-bottom: 2rem;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+    
+    /* Actualización para íconos sociales */
+    .social-icon:hover {
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+    }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+    /* General */
+    h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    /* Header */
+    .logo {
+        height: 40px;
+    }
+    
+    /* Forms */
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    /* Notification */
+    .notification-popup {
+        left: 10px;
+        right: 10px;
+        width: auto;
+    }
+    
+    /* Call Notification */
+    .notification-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    /* Actualización para botones de acción en notificaciones */
+    .btn-accept {
+        background-color: var(--success-color);
+        color: var(--white);
+    }
+    
+    .btn-delay {
+        background-color: var(--warning-color);
+        color: var(--white);
+    }
+    
+    /* Bill */
+    .bill-container {
+        padding: 1rem;
+        /* Agregar borde superior para consistencia */
+        border-top: 4px solid var(--primary-color);
+    }
+    
+    .bill-item-header {
+        font-size: 0.8rem;
+    }
+    
+    .item-name {
+        max-width: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

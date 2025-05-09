@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Cliente - Crepes & Waffles</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="cliente-page">
+    <header>
+        <div class="logo-container">
+            <img src="https://www.crepesywaffles.com.co/images/logo.png" alt="Logo Crepes & Waffles" class="logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="cliente.html" class="active">Portal Cliente</a></li>
+                <li><a href="mesera.html">Portal Mesera</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="welcome-section">
+            <div class="welcome-container">
+                <h1>Bienvenido al Portal del Cliente</h1>
+                <p>Disfruta de una experiencia gastronómica mejorada con nuestro sistema de atención digital</p>
+            </div>
+        </section>
+
+        <section class="client-dashboard">
+            <div class="dashboard-container">
+                <div class="menu-preview">
+                    <h2>Novedades del Menú</h2>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="https://picsum.photos/150" alt="Nuevo plato">
+                            <h3>Waffle de Arándanos</h3>
+                            <p>¡Nuevo! Con helado y frutas frescas</p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://picsum.photos/150" alt="Nuevo plato">
+                            <h3>Crepe Mediterráneo</h3>
+                            <p>¡Nuevo! Vegetales asados y queso de cabra</p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://picsum.photos/150" alt="Nuevo plato">
+                            <h3>Ensalada Primavera</h3>
+                            <p>¡Nueva! Con aderezo de mango</p>
+                        </div>
+                    </div>
+                    <a href="menu.html" class="btn btn-secondary">Ver Menú Completo</a>
+                </div>
+
+                <div class="waiter-call-section">
+                    <div class="call-card">
+                        <h2>Llamar a la Mesera</h2>
+                        <p>Ingresa el número de tu mesa y presiona el botón para solicitar atención</p>
+                        
+                        <div class="table-input">
+                            <label for="table-number">Número de Mesa:</label>
+                            <input type="number" id="table-number" min="1" max="100" required>
+                        </div>
+                        
+                        <button id="call-waiter-btn" class="btn btn-primary">
+                            <i class="fas fa-bell"></i> Llamar a la Mesera
+                        </button>
+                        
+                        <div id="call-status" class="status-hidden">
+                            <div class="status-content">
+                                <div id="status-icon" class="status-icon">
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                </div>
+                                <p id="status-message">Procesando tu solicitud...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="order-tracking">
+            <div class="tracking-container hidden" id="tracking-container">
+                <h2>Seguimiento de tu Pedido</h2>
+                <div class="tracking-bar">
+                    <div class="tracking-step active" id="step-received">
+                        <div class="step-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <p>Pedido Recibido</p>
+                    </div>
+                    <div class="tracking-step" id="step-preparation">
+                        <div class="step-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <p>En Preparación</p>
+                    </div>
+                    <div class="tracking-step" id="step-delivery">
+                        <div class="step-icon">
+                            <i class="fas fa-walking"></i>
+                        </div>
+                        <p>En Camino</p>
+                    </div>
+                    <div class="tracking-step" id="step-served">
+                        <div class="step-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <p>Servido</p>
+                    </div>
+                </div>
+                <div class="tracking-info">
+                    <p id="waiter-info">Tu mesera <span id="waiter-name">Ana</span> te atenderá pronto.</p>
+                    <p id="estimated-time">Tiempo estimado: <span id="time-value">10 minutos</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bill-view hidden" id="bill-section">
+            <div class="bill-container">
+                <h2>Tu Cuenta</h2>
+                <div class="bill-details">
+                    <div class="bill-header">
+                        <p><strong>Mesa:</strong> <span id="bill-table-number">12</span></p>
+                        <p><strong>Mesera:</strong> <span id="bill-waiter-name">Ana</span></p>
+                        <p><strong>Fecha:</strong> <span id="bill-date">08/05/2025</span></p>
+                    </div>
+                    <div class="bill-items">
+                        <div class="bill-item-header">
+                            <span class="item-name">Descripción</span>
+                            <span class="item-quantity">Cant.</span>
+                            <span class="item-price">Precio</span>
+                            <span class="item-total">Total</span>
+                        </div>
+                        <div id="bill-items-container">
+                            <!-- Items dinamicamente insertados por JavaScript -->
+                        </div>
+                    </div>
+                    <div class="bill-total">
+                        <p>Subtotal: <span id="bill-subtotal">$0.00</span></p>
+                        <p>Impuestos: <span id="bill-tax">$0.00</span></p>
+                        <p class="total-amount">Total: <span id="bill-total">$0.00</span></p>
+                    </div>
+                </div>
+                <div class="payment-options">
+                    <h3>Opciones de Pago</h3>
+                    <div class="payment-methods">
+                        <button class="payment-method">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>Efectivo</span>
+                        </button>
+                        <button class="payment-method">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Tarjeta</span>
+                        </button>
+                        <button class="payment-method">
+                            <i class="fas fa-qrcode"></i>
+                            <span>Pago QR</span>
+                        </button>
+                    </div>
+                    <button id="request-bill-btn" class="btn btn-primary">Solicitar la Cuenta</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="notification-popup" class="notification-popup">
+        <div class="notification-content">
+            <i class="fas fa-check-circle notification-icon"></i>
+            <p id="notification-message">¡Notificación recibida!</p>
+            <button id="notification-close" class="btn btn-small">Entendido</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Crepes & Waffles</h4>
+                <p>Gastronomía con amor y calidad</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="menu.html">Menú</a></li>
+                    <li><a href="cliente.html">Portal Cliente</a></li>
+                    <li><a href="mesera.html">Portal Mesera</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>Email: contacto@crepesywaffles.com</p>
+                <p>Teléfono: +57 1 234 5678</p>
+            </div>
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Crepes & Waffles. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="database.js"></script>
+    <script src="main.js"></script>
+    <script src="cliente.js"></script>
+</body>
+</html>

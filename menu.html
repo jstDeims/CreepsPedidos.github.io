@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - Crepes & Waffles</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .menu-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://picsum.photos/id/376/1920/1080') no-repeat center center/cover;
+        }
+    </style>
+</head>
+<body class="menu-page">
+    <header>
+        <div class="logo-container">
+            <img src="https://www.crepesywaffles.com.co/images/logo.png" alt="Logo Crepes & Waffles" class="logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html" class="active">Menú</a></li>
+                <li><a href="cliente.html">Portal Cliente</a></li>
+                <li><a href="mesera.html">Portal Mesera</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="menu-header">
+            <div class="menu-title">
+                <h1>Nuestro Menú</h1>
+                <p>Descubre nuestra variedad de platillos preparados con los mejores ingredientes</p>
+            </div>
+            <div class="menu-navigation">
+                <button class="menu-nav-btn active" data-category="all">Todo</button>
+                <button class="menu-nav-btn" data-category="crepes">Crepes</button>
+                <button class="menu-nav-btn" data-category="waffles">Waffles</button>
+                <button class="menu-nav-btn" data-category="helados">Helados</button>
+                <button class="menu-nav-btn" data-category="ensaladas">Ensaladas</button>
+                <button class="menu-nav-btn" data-category="bebidas">Bebidas</button>
+            </div>
+        </section>
+
+        <section class="menu-items-container">
+            <!-- Categoría: Crepes -->
+            <div class="menu-category" id="crepes">
+                <h2 class="category-title">Crepes</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="crepes">
+                        <div class="menu-item-image">
+                            <img src="https://picsum.photos/id/312/300/200" alt="Crepe de Pollo y Champiñones">
+                            <span class="menu-item-tag">Favorito</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Crepe de Pollo y Champiñones</h3>
+                            <p class="menu-item-description">Deliciosa crepe rellena de pollo, champiñones y salsa bechamel.</p>
+                            <p class="menu-item-price">$18.500</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="crepes">
+                        <div class="menu-item-image">
+                            <img src="https://picsum.photos/id/431/300/200" alt="Crepe Mixta">
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Crepe Mixta</h3>
+                            <p class="menu-item-description">Crepe con combinación de jamón, queso mozzarella y champiñones.</p>
+                            <p class="menu-item-price">$16.900</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="crepes">
+                        <div class="menu-item-image">
+                            <img src="https://picsum.photos/id/429/300/200" alt="Crepe de Espinaca">
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Crepe de Espinaca</h3>
+                            <p class="menu-item-description">Crepe rellena de espinaca, ricota y nueces.</p>
+                            <p class="menu-item-price">$17.500</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="crepes">
+                        <div class="menu-item-image">
+                            <img src="https://picsum.photos/id/365/300/200" alt="Crepe Mediterránea">
+                            <span class="menu-item-tag">Nuevo</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Crepe Mediterránea</h3>
+                            <p class="menu-item-description">Crepe gourmet con vegetales asados, queso de cabra y aceite de oliva.</p>
+                            <p class="menu-item-price">$21.900</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría: Waffles -->
+            <div class="menu-category" id="waffles">
+                <h2 class="category-title">Waffles</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="waffles">
+                        <div class="menu-item-image">
+                            <img src="https://picsum.photos/id/292/300/200" alt="Waffle con Helado">
+                            <span class="menu-item-tag">Favorito</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Waffle con Helado</h3>
+                            <p class="menu-item-description">Waffle crujiente servido con helado de vainilla y salsa de chocolate.</p>
+                            <p class="menu-item-price">$14.500</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="waffles">
+                        <div class="menu-item-image">
+                            <img src="https://picsum.photos/id/214/300/200" alt="Waffle de Fresas">
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Waffle de Fresas</h3>
+                            <p class="menu-item-description">Waffle clásico con fresas frescas y crema batida.</p>
+                            <p class="menu-item-price">$15.900</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="waffles">
+                        <div class="menu-item-image">
+                            <img src="https://picsum.photos/id/835/300/200" alt="Waffle de Arándanos">
+                            <span class="menu-item-tag">Nuevo</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Waffle de Arándanos</h3>
+                            <p class="menu-item-description">Waffle con arándanos frescos, helado de vainilla y miel de maple.</p>
+                            <p class="menu-item-price">$18.900</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="waffles">
+                        <div class="menu-item-image">
+                            <img src="https://picsum.photos/id/846/300/200" alt="Waffle Belga">
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Waffle Belga</h3>
+                            <p class="menu-item-description">Auténtico waffle belga con mantequilla y azúcar.</p>
+                            <p class="menu-item-price">$12.500</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría: Helados -->
+            <div class="menu-category" id="helados">
+                <h2 class="category-title">Helados</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="helados">
+                        <div class="menu-item-image">
+                            <img src="https://picsum.photos/id/231/300/200" alt="Copa Tradicional">
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Copa Tradicional</h3>
+                            <p class="menu-item-description">Tres bolas de helado a elección con salsa y barquillos.</p>
+                            <p class="menu-item-price">$12.900</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="helados">
+                        <div class="menu-item-image">
+                            <img src="https://picsum.photos/id/238/300/200" alt="Banana Split">
+                            <span class="menu-item-tag">Favorito</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Banana Split</h3>
+                            <p class="menu-item-description">Clásico postre con plátano, tres sabores de helado y toppings.</p>
+                            <p class="menu-item-price">$16.500</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="helados">
+                        <div class="menu-item-image">
+                            <img src="https://picsum.photos/id/265/300/200" alt="Brownie con Helado">
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Brownie con Helado</h3>
+                            <p class="menu-item-description">Brownie caliente con helado de vainilla y salsa de chocolate.</p>
+                            <p class="menu-item-price">$15.900</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría: Ensaladas -->
+            <div class="menu-category" id="ensaladas">
+                <h2 class="category-title">Ensaladas</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="ensaladas">
+                        <div class="menu-item-image">
+                            <img src="https://picsum.photos/id/488/300/200" alt="Ensalada César">
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Ensalada César</h3>
+                            <p class="menu-item-description">Lechuga romana, pollo, crutones, queso parmesano y aderezo César.</p>
+                            <p class="menu-item-price">$18.900</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="ensaladas">
+                        <div class="menu-item-image">
+                            <img src="https://picsum.photos/id/674/300/200" alt="Ensalada Mediterránea">
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Ensalada Mediterránea</h3>
+                            <p class="menu-item-description">Mix de lechugas, tomate, pepino, aceitunas, queso feta y vinagreta.</p>
+                            <p class="menu-item-price">$19.500</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="ensaladas">
+                        <div class="menu-item-image">
+                            <img src="https://picsum.photos/id/755/300/200" alt="Ensalada Primavera">
+                            <span class="menu-item-tag">Nuevo</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Ensalada Primavera</h3>
+                            <p class="menu-item-description">Ensalada fresca con espinacas, fresas, queso de cabra y aderezo de mango.</p>
+                            <p class="menu-item-price">$20.900</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría: Bebidas -->
+            <div class="menu-category" id="bebidas">
+                <h2 class="category-title">Bebidas</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="bebidas">
+                        <div class="menu-item-image">
+                            <img src="https://picsum.photos/id/431/300/200" alt="Limonada Natural">
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Limonada Natural</h3>
+                            <p class="menu-item-description">Refrescante limonada preparada al momento.</p>
+                            <p class="menu-item-price">$8.500</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="bebidas">
+                        <div class="menu-item-image">
+                            <img src="https://picsum.photos/id/662/300/200" alt="Jugos Naturales">
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Jugos Naturales</h3>
+                            <p class="menu-item-description">Variedad de jugos de frutas naturales.</p>
+                            <p class="menu-item-price">$9.500</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="bebidas">
+                        <div class="menu-item-image">
+                            <img src="https://picsum.photos/id/766/300/200" alt="Café">
+                            <span class="menu-item-tag">Favorito</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Café</h3>
+                            <p class="menu-item-description">Café premium colombiano.</p>
+                            <p class="menu-item-price">$5.500</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="bebidas">
+                        <div class="menu-item-image">
+                            <img src="https://picsum.photos/id/630/300/200" alt="Té Helado">
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Té Helado</h3>
+                            <p class="menu-item-description">Té helado con sabores a elección.</p>
+                            <p class="menu-item-price">$7.900</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="qr-info">
+            <div class="qr-container">
+                <div class="qr-image">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://ejemplo.com/cliente" alt="Código QR">
+                </div>
+                <div class="qr-text">
+                    <h3>¿Estás en el restaurante?</h3>
+                    <p>Escanea el código QR de tu mesa para solicitar atención o realizar pedidos.</p>
+                    <a href="cliente.html" class="btn btn-primary">Ir al Portal del Cliente</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Crepes & Waffles</h4>
+                <p>Gastronomía con amor y calidad</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="menu.html">Menú</a></li>
+                    <li><a href="cliente.html">Portal Cliente</a></li>
+                    <li><a href="mesera.html">Portal Mesera</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>Email: contacto@crepesywaffles.com</p>
+                <p>Teléfono: +57 1 234 5678</p>
+            </div>
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Crepes & Waffles. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

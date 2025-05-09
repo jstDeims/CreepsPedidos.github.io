@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Mesera - Crepes & Waffles</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="mesera-page">
+    <header>
+        <div class="logo-container">
+            <img src="https://www.crepesywaffles.com.co/images/logo.png" alt="Logo Crepes & Waffles" class="logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="cliente.html">Portal Cliente</a></li>
+                <li><a href="mesera.html" class="active">Portal Mesera</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="login-container" id="login-container">
+        <div class="login-card">
+            <h2>Acceso de Mesera</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="zone-select">Zona Asignada:</label>
+                    <select id="zone-select" required>
+                        <option value="">Selecciona una zona</option>
+                        <option value="A">Zona A</option>
+                        <option value="B">Zona B</option>
+                        <option value="C">Zona C</option>
+                        <option value="D">Zona D</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+
+    <main id="mesera-dashboard" class="hidden">
+        <section class="mesera-welcome">
+            <div class="welcome-text">
+                <h1>Bienvenida, <span id="mesera-name">Ana</span></h1>
+                <p>Zona asignada: <span id="mesera-zone">A</span></p>
+            </div>
+            <div class="mesera-status">
+                <span id="status-indicator" class="status-active"></span>
+                <span id="status-text">Activa</span>
+            </div>
+        </section>
+
+        <section class="dashboard-controls">
+            <div class="control-buttons">
+                <button id="view-calls-btn" class="control-btn active">
+                    <i class="fas fa-bell"></i>
+                    <span>Llamados</span>
+                    <span class="notification-badge" id="calls-badge">0</span>
+                </button>
+                <button id="view-tables-btn" class="control-btn">
+                    <i class="fas fa-th"></i>
+                    <span>Mesas</span>
+                </button>
+                <button id="view-orders-btn" class="control-btn">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Pedidos</span>
+                    <span class="notification-badge" id="orders-badge">0</span>
+                </button>
+                <button id="view-history-btn" class="control-btn">
+                    <i class="fas fa-history"></i>
+                    <span>Historial</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Panel de llamados -->
+        <section id="calls-panel" class="dashboard-panel active-panel">
+            <div class="panel-header">
+                <h2>Llamados Activos</h2>
+                <p class="panel-description">Solicitudes pendientes ordenadas por prioridad</p>
+            </div>
+            <div class="calls-list" id="calls-list">
+                <!-- Los llamados se generarán dinámicamente desde JavaScript -->
+            </div>
+        </section>
+
+        <!-- Panel de mesas -->
+        <section id="tables-panel" class="dashboard-panel">
+            <div class="panel-header">
+                <h2>Vista de Mesas</h2>
+                <p class="panel-description">Estado actual de las mesas en tu zona</p>
+            </div>
+            <div class="tables-filter">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="occupied">Ocupadas</button>
+                <button class="filter-btn" data-filter="available">Disponibles</button>
+                <button class="filter-btn" data-filter="pending">Pendientes</button>
+            </div>
+            <div class="tables-map" id="tables-map">
+                <div class="map-container" id="map-container">
+                    <!-- Las mesas se generarán dinámicamente desde JavaScript -->
+                </div>
+            </div>
+            <div class="tables-info">
+                <div class="info-item">
+                    <span class="info-icon available"></span>
+                    <span>Disponible</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon occupied"></span>
+                    <span>Ocupada</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon pending"></span>
+                    <span>Atención pendiente</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon processing"></span>
+                    <span>Pedido en proceso</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Panel de pedidos -->
+        <section id="orders-panel" class="dashboard-panel">
+            <div class="panel-header">
+                <h2>Lista de Pedidos</h2>
+                <p class="panel-description">Pedidos activos ordenados por prioridad</p>
+            </div>
+            <div class="orders-list" id="orders-list">
+                <!-- Los pedidos se generarán dinámicamente desde JavaScript -->
+            </div>
+        </section>
+
+        <!-- Panel de historial -->
+        <section id="history-panel" class="dashboard-panel">
+            <div class="panel-header">
+                <h2>Historial de Atención</h2>
+                <p class="panel-description">Registro de atenciones del día</p>
+            </div>
+            <div class="history-filter">
+                <div class="date-filter">
+                    <label for="history-date">Fecha:</label>
+                    <input type="date" id="history-date" value="2025-05-08">
+                </div>
+                <div class="type-filter">
+                    <label for="history-type">Tipo:</label>
+                    <select id="history-type">
+                        <option value="all">Todos</option>
+                        <option value="calls">Llamados</option>
+                        <option value="orders">Pedidos</option>
+                    </select>
+                </div>
+                <button id="filter-history-btn" class="btn btn-small">Filtrar</button>
+            </div>
+            <div class="history-list" id="history-list">
+                <!-- El historial se generará dinámicamente desde JavaScript -->
+            </div>
+        </section>
+
+        <!-- Cola de emparejamiento -->
+        <section class="pairing-queue">
+            <div class="queue-header">
+                <h2>Cola de Emparejamiento</h2>
+                <p class="queue-description">Mesas asignadas en espera de atención</p>
+            </div>
+            <div class="queue-list" id="queue-list">
+                <!-- La cola se generará dinámicamente desde JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Notificación emergente para llamados de clientes -->
+    <div id="call-notification" class="call-notification">
+        <div class="notification-content">
+            <div class="notification-header">
+                <i class="fas fa-bell notification-icon"></i>
+                <h3>¡Nuevo Llamado!</h3>
+            </div>
+            <div class="notification-body">
+                <p>Mesa: <span id="notification-table-number">12</span></p>
+                <p>Zona: <span id="notification-zone">A</span></p>
+                <p class="notification-time">Hace <span id="notification-time">0</span> segundos</p>
+            </div>
+            <div class="notification-actions">
+                <button id="accept-call-btn" class="btn btn-accept">
+                    <i class="fas fa-check"></i> Aceptar
+                </button>
+                <button id="delay-call-btn" class="btn btn-delay">
+                    <i class="fas fa-clock"></i> En unos minutos
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Crepes & Waffles</h4>
+                <p>Gastronomía con amor y calidad</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="menu.html">Menú</a></li>
+                    <li><a href="cliente.html">Portal Cliente</a></li>
+                    <li><a href="mesera.html">Portal Mesera</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>Email: contacto@crepesywaffles.com</p>
+                <p>Teléfono: +57 1 234 5678</p>
+            </div>
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Crepes & Waffles. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="database.js"></script>
+    <script src="main.js"></script>
+    <script src="mesera.js"></script>
+</body>
+</html>
